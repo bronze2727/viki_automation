@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>vikipedi</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <dependencies> <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.2.1</version>
+    </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!-- //https://mvnrepository.com/ git ve selenium java ara-->
+        <!-- selenium'un resmi sitesinden indirdigimiz tum jar filelarini icerir -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.6.0</version>
+            <!--  .m2 ye kaydoldu-->
+        </dependency>
+
+
+        <!--junit-jupiter-engine: It has test engine implementation which is required at runtime to execute the tests.-->
+        <!-- @Testlerin runtime esnasinda(yani yesil oka basildiginda) calismasini/execute edilmesini saglar -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+
+            <!--Bu dependency sadece ve sadece yesil java folder'inin icindeki classlarda kullanilabilir. -->
+        </dependency>
+
+        <!-- junit-jupiter-api: It is the main module where all core annotations are located, such as @Test, Lifecycle method annotations and assertions.-->
+        <!-- JUNIT5 ANNOTATIONSLARININ GELDIGI DEPENDENCY dir-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- junit-jupiter-params: Support for parameterized tests in JUnit 5. -->
+        <!-- junit5'te parametreli testler yazmamizi saglar -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUNIT3-4 ile compatibility i saglayan kutuphanedir -->
+        <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--junit-platform-suite: The @Suite support provided by this module to make the JUnitPlatform runner obsolete.-->
+        <!--JUNIT5 TEST SUITE CLASSININ CALISMASI ICIN GEREKLIDIR -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- bu dependecy olmasaydi, bir alttaki alliure report dependency'si JUnitTestSuiteClass larimzin calismasini engelliyordu
+        simdi ie bu dependecy sayseinde hem allure report'u hem testSuite i frameorkumuzde kullanabiliyoruz-->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency></dependencies>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.9.1</junit.jupiter.version>
+        <junit.platform.version>1.9.1</junit.platform.version>
+    </properties>
+
+</project>
